@@ -157,9 +157,9 @@ function setTwo() {
         let r = Math.floor(Math.random() * rows);
         let c = Math.floor(Math.random() * columns);
         if (board[r][c] == 0) {
-            board[r][c] = 2;
+            board[r][c] = Math.random() > 0.5 ? 2 : 4;
             let tile = document.getElementById(r.toString() + "-" + c.toString());
-            tile.innerText = "2";
+            tile.innerText = Math.random() > 0.5 ? 2 : 4; 
             tile.classList.add("x2");
             found = true;
         }
