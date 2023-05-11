@@ -54,67 +54,67 @@ h2 {
 }
 
 .x2 {
-    background-color: #eee4da;
-    color: #727371;
+    background-color: #e2e5ec;
+    color: #5f615c;
 }
 
 .x4 {
-    background-color: #ece0ca;
-    color: #727371;
+    background-color: #c1c4e7;
+    color: #50524e;
 }
 
 .x8 {
-    background-color: #f4b17a;
+    background-color: #819eca;
     color: white;
 }
 
 .x16 {
-    background-color: #f59575;
+    background-color: #6785d8;
     color: white;
 }
 
 .x32 {
-    background-color: #f57c5f;
+    background-color: #7678eb;
     color: white;
 }
 
 .x64 {
-    background-color: #f65d3b;
+    background-color: #4d41ec;
     color: white;
 }
 
 .x128 {
-    background-color: #edce71;
+    background-color: #7739b1;
     color: white;
 }
 
 .x256 {
-    background-color: #edcc63;
+    background-color: #483bbe;
     color: white;
 }
 
 .x512 {
-    background-color: #edc651;
+    background-color: #321ab6;
     color: white;
 }
 
 .x1024 {
-    background-color: #eec744;
+    background-color: #237786;
     color: white;
 }
 
 .x2048 {
-    background-color: #ecc230;
+    background-color: #143f5c;
     color: white;
 }
 
 .x4096 {
-    background-color: #fe3d3d;
+    background-color: #da2e2e;
     color: white;
 }
 
 .x8192 {
-    background-color: #ff2020;
+    background-color: #5a0404;
     color: white;
 }
 @keyframes show {
