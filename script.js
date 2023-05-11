@@ -72,20 +72,24 @@ function filterZero(row){
 }
 
 function slide(row) {
-    
-    row = filterZero(row); 
-    for (let i = 0; i < row.length-1; i++){
-        if (row[i] == row[i+1]) {
+
+    row = filterZero(row);
+    for (let i = 0; i < row.length - 1; i++) {
+        if (row[i] == row[i + 1]) {
             row[i] *= 2;
-            row[i+1] = 0;
+            row[i + 1] = 0;
             score += row[i];
         }
-    } 
-    row = filterZero(row); 
+        if (row[i+1] == 2048) {
+            alert("You Won!!");
+            return;
+        }
+    }
+    row = filterZero(row);
 
     while (row.length < columns) {
         row.push(0);
-    } 
+    }
     return row;
 }
 
