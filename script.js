@@ -47,20 +47,20 @@ function updateTile(tile, num) {
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.code == "ArrowLeft" || e.key=='a') {
+    if (e.code == "ArrowLeft" || e.key=='a' || e.key=='A') {
         slideLeft();
         setTwo();
     }
-    else if (e.code == "ArrowRight" || e.key=='d') {
+    else if (e.code == "ArrowRight" || e.key=='d' || e.key=='D') {
         slideRight();
         setTwo();
     }
-    else if (e.code == "ArrowUp" || e.key=='w') {
+    else if (e.code == "ArrowUp" || e.key=='w' || e.key=='W') {
         slideUp();
         setTwo();
 
     }
-    else if (e.code == "ArrowDown" || e.key=='s') {
+    else if (e.code == "ArrowDown" || e.key=='s' || e.key=='S') {
         slideDown();
         setTwo();
     }
