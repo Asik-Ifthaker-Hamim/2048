@@ -3,12 +3,12 @@ var score = 0;
 var rows = 4;
 var columns = 4;
 
-window.onload = function() {
+window.onload = function () {
     setGame();
 }
 
 function setGame() {
-   
+
 
     board = [
         [0, 0, 0, 0],
@@ -26,7 +26,7 @@ function setGame() {
             document.getElementById("board").append(tile);
         }
     }
-    
+
     setTwo();
     setTwo();
 
@@ -34,41 +34,41 @@ function setGame() {
 
 function updateTile(tile, num) {
     tile.innerText = "";
-    tile.classList.value = ""; 
+    tile.classList.value = "";
     tile.classList.add("tile");
     if (num > 0) {
         tile.innerText = num.toString();
         if (num <= 4096) {
-            tile.classList.add("x"+num.toString());
+            tile.classList.add("x" + num.toString());
         } else {
             tile.classList.add("x8192");
-        }                
+        }
     }
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.code == "ArrowLeft" || e.key=='a' || e.key=='A') {
+    if (e.code == "ArrowLeft" || e.key == 'a' || e.key == 'A') {
         slideLeft();
         setTwo();
     }
-    else if (e.code == "ArrowRight" || e.key=='d' || e.key=='D') {
+    else if (e.code == "ArrowRight" || e.key == 'd' || e.key == 'D') {
         slideRight();
         setTwo();
     }
-    else if (e.code == "ArrowUp" || e.key=='w' || e.key=='W') {
+    else if (e.code == "ArrowUp" || e.key == 'w' || e.key == 'W') {
         slideUp();
         setTwo();
 
     }
-    else if (e.code == "ArrowDown" || e.key=='s' || e.key=='S') {
+    else if (e.code == "ArrowDown" || e.key == 's' || e.key == 'S') {
         slideDown();
         setTwo();
     }
     document.getElementById("score").innerText = score;
 })
 
-function filterZero(row){
-    return row.filter(num => num != 0); 
+function filterZero(row) {
+    return row.filter(num => num != 0);
 }
 
 function slide(row) {
@@ -80,7 +80,7 @@ function slide(row) {
             row[i + 1] = 0;
             score += row[i];
         }
-        if (row[i+1] == 2048) {
+        if (row[i + 1] == 2048) {
             alert("You Won!!");
             return;
         }
@@ -92,13 +92,12 @@ function slide(row) {
     }
     return row;
 }
-
 function slideLeft() {
     for (let r = 0; r < rows; r++) {
         let row = board[r];
         row = slide(row);
         board[r] = row;
-        for (let c = 0; c < columns; c++){
+        for (let c = 0; c < columns; c++) {
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             let num = board[r][c];
             updateTile(tile, num);
@@ -108,11 +107,11 @@ function slideLeft() {
 
 function slideRight() {
     for (let r = 0; r < rows; r++) {
-        let row = board[r];         
-        row.reverse();             
-        row = slide(row)            
-        board[r] = row.reverse();   
-        for (let c = 0; c < columns; c++){
+        let row = board[r];
+        row.reverse();
+        row = slide(row)
+        board[r] = row.reverse();
+        for (let c = 0; c < columns; c++) {
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             let num = board[r][c];
             updateTile(tile, num);
@@ -124,7 +123,7 @@ function slideUp() {
     for (let c = 0; c < columns; c++) {
         let row = [board[0][c], board[1][c], board[2][c], board[3][c]];
         row = slide(row);
-        for (let r = 0; r < rows; r++){
+        for (let r = 0; r < rows; r++) {
             board[r][c] = row[r];
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             let num = board[r][c];
@@ -139,7 +138,7 @@ function slideDown() {
         row.reverse();
         row = slide(row);
         row.reverse();
-        for (let r = 0; r < rows; r++){
+        for (let r = 0; r < rows; r++) {
             board[r][c] = row[r];
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             let num = board[r][c];
@@ -159,8 +158,15 @@ function setTwo() {
         if (board[r][c] == 0) {
             board[r][c] = Math.random() > 0.5 ? 2 : 4;
             let tile = document.getElementById(r.toString() + "-" + c.toString());
-            tile.innerText = Math.random() > 0.5 ? 2 : 4; 
-            tile.classList.add("x2");
+            var x = Math.random() > 0.5 ? 2 : 4;
+            tile.innerText = x;
+            if (x == 2) {
+                tile.classList.add("x2");
+            }
+            else
+            {
+                tile.classList.add("x4");
+            }
             found = true;
         }
     }
@@ -170,7 +176,7 @@ function hasEmptyTile() {
     let count = 0;
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
-            if (board[r][c] == 0) { 
+            if (board[r][c] == 0) {
                 return true;
             }
         }
