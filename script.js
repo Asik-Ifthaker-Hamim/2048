@@ -31,7 +31,7 @@ function setGame() {
     setTwo();
 
 }
-
+var c = 0;
 function updateTile(tile, num) {
     tile.innerText = "";
     tile.classList.value = "";
@@ -44,25 +44,145 @@ function updateTile(tile, num) {
             tile.classList.add("x8192");
         }
     }
+    if (num == 2048) {
+        if (c == 0)
+            c = c + 1;
+        else {
+            c = 0;
+            alert("YOU WON!!");
+        }
+    }
 }
-
+var v = 0;
 document.addEventListener('keydown', (e) => {
     if (e.code == "ArrowLeft" || e.key == 'a' || e.key == 'A') {
         slideLeft();
         setTwo();
+        let f = 0;
+        let count = 0;
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[r][c] == board[r][c + 1])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[c][r] == board[c + 1][r])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                if (board[r][c] > 0)
+                    count++;
+            }
+        }
+        if (f == 0 && count == 16) {
+            if (v == 0)
+                v = v + 1;
+            else {
+                v = 0;
+                alert("YOU LOSE!!");
+            }
+        }
     }
     else if (e.code == "ArrowRight" || e.key == 'd' || e.key == 'D') {
         slideRight();
         setTwo();
+        let f = 0;
+        let count = 0;
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[r][c] == board[r][c + 1])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[c][r] == board[c + 1][r])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                if (board[r][c] > 0)
+                    count++;
+            }
+        }
+        if (f == 0 && count == 16) {
+            if (v == 0)
+                v = v + 1;
+            else {
+                v = 0;
+                alert("YOU LOSE!!");
+            }
+        }
     }
     else if (e.code == "ArrowUp" || e.key == 'w' || e.key == 'W') {
         slideUp();
         setTwo();
+        let f = 0;
+        let count = 0;
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[r][c] == board[r][c + 1])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[c][r] == board[c + 1][r])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                if (board[r][c] > 0)
+                    count++;
+            }
+        }
+        if (f == 0 && count == 16) {
+            if (v == 0)
+                v = v + 1;
+            else {
+                v = 0;
+                alert("YOU LOSE!!");
+            }
+        }
 
     }
     else if (e.code == "ArrowDown" || e.key == 's' || e.key == 'S') {
         slideDown();
         setTwo();
+        let f = 0;
+        let count = 0;
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[r][c] == board[r][c + 1])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns - 1; c++) {
+                if (board[c][r] == board[c + 1][r])
+                    f = 1;
+            }
+        }
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                if (board[r][c] > 0)
+                    count++;
+            }
+        }
+        if (f == 0 && count == 16) {
+            if (v == 0)
+                v = v + 1;
+            else {
+                v = 0;
+                alert("YOU LOSE!!");
+            }
+        }
     }
     document.getElementById("score").innerText = score;
 })
@@ -79,10 +199,6 @@ function slide(row) {
             row[i] *= 2;
             row[i + 1] = 0;
             score += row[i];
-        }
-        if (row[i + 1] == 2048) {
-            alert("You Won!!");
-            return;
         }
     }
     row = filterZero(row);
@@ -117,6 +233,7 @@ function slideRight() {
             updateTile(tile, num);
         }
     }
+
 }
 
 function slideUp() {
@@ -163,8 +280,7 @@ function setTwo() {
             if (x == 2) {
                 tile.classList.add("x2");
             }
-            else
-            {
+            else {
                 tile.classList.add("x4");
             }
             found = true;
