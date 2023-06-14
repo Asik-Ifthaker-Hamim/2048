@@ -183,3 +183,6 @@ function hasEmptyTile() {
     }
     return false;
 }
+let saveData=()=>{
+    localStorage.setItem("data", JSON.stringify(data));
+}
