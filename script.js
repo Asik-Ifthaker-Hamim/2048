@@ -75,7 +75,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        alert("YOU LOSE!!");
+        document.getElementById("gameOver").style.display = "flex";
       }
     }
   } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
@@ -102,7 +102,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        alert("YOU LOSE!!");
+        document.getElementById("gameOver").style.display = "flex";
       }
     }
   } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
@@ -129,7 +129,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        alert("YOU LOSE!!");
+        document.getElementById("gameOver").style.display = "flex";
       }
     }
   } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
@@ -156,7 +156,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        alert("YOU LOSE!!");
+        document.getElementById("gameOver").style.display = "flex";
       }
     }
   }
