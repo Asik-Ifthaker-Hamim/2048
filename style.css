@@ -1,177 +1,183 @@
 body {
-  font-family: "Times New Roman", Times, serif, Helvetica, sans-serif;
-  text-align: center;
-  background-color: #263332;
-}
-
-hr {
-  width: 600px;
-  height: 2px;
-  background-color: #ece0ca;
-}
-
-h1 {
-  text-align: center;
-  font-family: "Times New Roman";
-  font-size: 40pt;
-  color: rgb(238, 207, 207);
-}
-
-h2 {
-  text-align: center;
-  font-family: "Times New Roman";
-  font-size: 20pt;
-  color: rgb(238, 207, 207);
-}
-
-#board {
-  width: 400px;
-  height: 400px;
-  background-color: #dadada;
-  border: 6px solid #dadada;
-  border-radius: 1vmin;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  animation: show 200ms ease-in-out;
-  transition: 100ms ease-in-out;
-  position: relative;
-}
-#gameOver {
-  position: absolute;
-  background-color: #143f5c;
-  height: 100px;
-  width: 300px;
-  border-radius: 5px;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  top: 40%;
-  right: 0;
-  display: none;
-}
-#gameOver p {
-  margin: auto;
-  font-size: 50px;
-}
-#gameWin {
-  position: absolute;
-  background-color: #143f5c;
-  height: 100px;
-  width: 300px;
-  border-radius: 5px;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  top: 40%;
-  right: 0;
-  display: none;
-}
-#gameWin p {
-  margin: auto;
-  font-size: 50px;
-}
-#playerName {
-  display: none;
-  background-color: #165c67;
-  height: 100px;
-  color: white;
-  width: 300px;
-  position: absolute;
-  border-radius: 10px;
-  font-size: 40px;
-  left: 0;
-  top: 60%;
-  text-align: center;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tile {
-  width: 90px;
-  height: 90px;
-  border: 5px solid #dadada;
-  font-size: 40px;
-  font-weight: bold;
-  background-color: rgb(177, 168, 168);
-  display: flex;
-  border-radius: 1vmin;
-  justify-content: center;
-  align-items: center;
-  animation: show 200ms ease-in-out;
-  transition: 100ms ease-in-out;
-}
-
-.x2 {
-  background-color: #e2e5ec;
-  color: #5f615c;
-}
-
-.x4 {
-  background-color: #c1c4e7;
-  color: #50524e;
-}
-
-.x8 {
-  background-color: #819eca;
-  color: white;
-}
-
-.x16 {
-  background-color: #6785d8;
-  color: white;
-}
-
-.x32 {
-  background-color: #7678eb;
-  color: white;
-}
-
-.x64 {
-  background-color: #4d41ec;
-  color: white;
-}
-
-.x128 {
-  background-color: #7739b1;
-  color: white;
-}
-
-.x256 {
-  background-color: #483bbe;
-  color: white;
-}
-
-.x512 {
-  background-color: #321ab6;
-  color: white;
-}
-
-.x1024 {
-  background-color: #237786;
-  color: white;
-}
-
-.x2048 {
-  background-color: #143f5c;
-  color: white;
-}
-
-.x4096 {
-  background-color: #da2e2e;
-  color: white;
-}
-
-.x8192 {
-  background-color: #5a0404;
-  color: white;
-}
-@keyframes show {
-  0% {
-    opacity: 0.5;
-    transform: scale(0);
+    font-family: "Times New Roman", Times, serif, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #263332;
   }
-}
+  
+  hr {
+    width: 600px;
+    height: 2px;
+    background-color: #ece0ca;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 40pt;
+    color: rgb(238, 207, 207);
+  }
+  
+  h2 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 20pt;
+    color: rgb(238, 207, 207);
+  }
+  
+  #board {
+    width: 400px;
+    height: 400px;
+    background-color: #dadada;
+    border: 6px solid #dadada;
+    border-radius: 1vmin;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+    position: relative;
+  }
+  #gameOver {
+    position: absolute;
+    background-color: #af4820;
+    height: 300px;
+    width: 600px;
+    border-radius: 5px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: 30%;
+    right: 0;
+    display: none;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+  }
+  #gameOver p {
+    margin: auto;
+    font-size: 100px;
+  }
+  #gameWin {
+    position: absolute;
+    background-color: #0d85d4;
+    height: 200px;
+    width: 500px;
+    border-radius: 10px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: 35%;
+    right: 0;
+    display: none;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+  }
+  #gameWin p {
+    margin: auto;
+    font-size: 100px;
+  }
+  #playerName {
+    display: none;
+    background-color: #165c67;
+    height: 60px;
+    color: white;
+    width: 300px;
+    position: absolute;
+    border-radius: 10px;
+    font-size: 20px;
+    left: 0;
+    top: 80%;
+    text-align: center;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+  }
+  
+  .tile {
+    width: 90px;
+    height: 90px;
+    border: 5px solid #dadada;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: rgb(177, 168, 168);
+    display: flex;
+    border-radius: 1vmin;
+    justify-content: center;
+    align-items: center;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+  }
+  
+  .x2 {
+    background-color: #e2e5ec;
+    color: #5f615c;
+  }
+  
+  .x4 {
+    background-color: #c1c4e7;
+    color: #50524e;
+  }
+  
+  .x8 {
+    background-color: #819eca;
+    color: white;
+  }
+  
+  .x16 {
+    background-color: #6785d8;
+    color: white;
+  }
+  
+  .x32 {
+    background-color: #7678eb;
+    color: white;
+  }
+  
+  .x64 {
+    background-color: #4d41ec;
+    color: white;
+  }
+  
+  .x128 {
+    background-color: #7739b1;
+    color: white;
+  }
+  
+  .x256 {
+    background-color: #483bbe;
+    color: white;
+  }
+  
+  .x512 {
+    background-color: #321ab6;
+    color: white;
+  }
+  
+  .x1024 {
+    background-color: #237786;
+    color: white;
+  }
+  
+  .x2048 {
+    background-color: #143f5c;
+    color: white;
+  }
+  
+  .x4096 {
+    background-color: #da2e2e;
+    color: white;
+  }
+  
+  .x8192 {
+    background-color: #5a0404;
+    color: white;
+  }
+  @keyframes show {
+    0% {
+      opacity: 0.5;
+      transform: scale(0);
+    }
+  }
