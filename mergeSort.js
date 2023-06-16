@@ -8,7 +8,7 @@ function mergeSort(array) {
 function merge(leftArray, rightArray) {
   let ans = [];
   while (leftArray.length && rightArray.length) {
-    if (leftArray[0] < rightArray[0]) {
+    if (leftArray[0].score > rightArray[0].score) {
       ans.push(leftArray.shift());
     } else {
       ans.push(rightArray.shift());

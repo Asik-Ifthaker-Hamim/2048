@@ -275,3 +275,13 @@ function hasEmptyTile() {
 let saveData = () => {
   localStorage.setItem("data", JSON.stringify(data));
 };
+document.getElementById("playerName").addEventListener("keypress", (player) => {
+  if (player.key === "Enter") {
+    data.push({
+      name: document.getElementById("playerName").value,
+      score: score,
+    });
+    data=mergeSort(data);
+    saveData();
+  }
+});
