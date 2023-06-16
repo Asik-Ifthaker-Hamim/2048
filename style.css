@@ -67,13 +67,14 @@ h2 {
   left: 0;
   top: 40%;
   right: 0;
-  display: flex;
+  display: none;
 }
 #gameWin p {
   margin: auto;
   font-size: 50px;
 }
 #playerName {
+  display: none;
   background-color: #165c67;
   height: 100px;
   color: white;
