@@ -11,3 +11,7 @@ Live Demo -> https://asik-ifthaker-hamim.github.io/2048/
 ![1](https://github.com/Asik-Ifthaker-Hamim/2048/assets/109816005/b553f87f-b03d-4c97-8ff6-f098d2400ff1)
 
 **If you cannot move then **GAME OVER!!****
+
+![2](https://github.com/Asik-Ifthaker-Hamim/2048/assets/109816005/62cbdaf9-ac3b-45d5-84e5-621a1f93e3fd)
+
+**If any tile merge to **2048** then you will WON the game**
