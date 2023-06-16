@@ -283,7 +283,8 @@ document.getElementById("playerName").addEventListener("keypress", (player) => {
     });
     data = mergeSort(data);
     saveData();
-    window.location.href = "leaderBoard.html";
+    window.location.href =
+      "https://asik-ifthaker-hamim.github.io/2048/leaderBoard.html";
   }
 });
 let gameOver = () => {
