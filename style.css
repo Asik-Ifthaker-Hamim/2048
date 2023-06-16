@@ -47,7 +47,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  top: 50%;
+  top: 40%;
   right: 0;
   display: none;
 }
@@ -65,13 +65,29 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  top: 50%;
+  top: 40%;
   right: 0;
   display: none;
 }
 #gameWin p {
   margin: auto;
   font-size: 50px;
+}
+#playerName {
+  display: none;
+  background-color: #165c67;
+  height: 100px;
+  color: white;
+  width: 300px;
+  position: absolute;
+  border-radius: 10px;
+  font-size: 40px;
+  left: 0;
+  top: 60%;
+  text-align: center;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tile {

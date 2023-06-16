@@ -45,7 +45,7 @@ function updateTile(tile, num) {
     if (c == 0) c = c + 1;
     else {
       c = 0;
-      document.getElementById("gameWin").style.display = "flex";
+      gameWin();
     }
   }
 }
@@ -75,7 +75,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        document.getElementById("gameOver").style.display = "flex";
+        gameOver();
       }
     }
   } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
@@ -102,7 +102,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        document.getElementById("gameOver").style.display = "flex";
+        gameOver();
       }
     }
   } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
@@ -129,7 +129,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        document.getElementById("gameOver").style.display = "flex";
+        gameOver();
       }
     }
   } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
@@ -156,7 +156,7 @@ document.addEventListener("keydown", (e) => {
       if (v == 0) v = v + 1;
       else {
         v = 0;
-        document.getElementById("gameOver").style.display = "flex";
+        gameOver();
       }
     }
   }
@@ -274,4 +274,22 @@ function hasEmptyTile() {
 }
 let saveData = () => {
   localStorage.setItem("data", JSON.stringify(data));
+};
+document.getElementById("playerName").addEventListener("keypress", (player) => {
+  if (player.key === "Enter") {
+    data.push({
+      name: document.getElementById("playerName").value,
+      score: score,
+    });
+    data = mergeSort(data);
+    saveData();
+  }
+});
+let gameOver = () => {
+  document.getElementById("gameOver").style.display = "flex";
+  document.getElementById("playerName").style.display = "block";
+};
+let gameWin = () => {
+  document.getElementById("gameWin").style.display = "flex";
+  document.getElementById("playerName").style.display = "block";
 };
