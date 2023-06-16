@@ -6,7 +6,7 @@
     background-color: #263332;
   }
   #container {
-    min-height: 50vh;
+    min-height: 70vh;
     width: 100vw;
     display: grid;
   }
