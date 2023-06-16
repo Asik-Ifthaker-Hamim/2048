@@ -6,13 +6,23 @@ body {
   background-color: #263332;
 }
 #container {
-  height: 100svh;
-  width: 100svw;
+  min-height: 100vh;
+  width: 100vw;
   display: grid;
 }
-div div div {
+div div {
+  border-radius: 10px;
   margin: auto;
+  padding: 0px 10px 10px 10px;
+  background-color: #dadada;
+}
+.player {
   width: 400px;
-  height: 100px;
+  height: 70px;
+  margin-top: 10px;
   background-color: #b1a8a8;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  padding: 10px;
 }
