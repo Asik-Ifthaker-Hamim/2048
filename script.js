@@ -283,6 +283,7 @@ document.getElementById("playerName").addEventListener("keypress", (player) => {
     });
     data = mergeSort(data);
     saveData();
+    window.location.href = "leaderBoard.html";
   }
 });
 let gameOver = () => {
