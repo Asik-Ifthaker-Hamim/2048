@@ -6,7 +6,7 @@
     background-color: #263332;
   }
   #container {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100vw;
     display: grid;
   }
@@ -18,7 +18,7 @@
   }
   .player {
     width: 400px;
-    height: 70px;
+    height: 30px;
     margin-top: 10px;
     background-color: #3d4135;
     text-align: center;
