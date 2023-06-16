@@ -7,3 +7,7 @@ Live Demo -> https://asik-ifthaker-hamim.github.io/2048/
 
 
 **You can check Game LeaderBoard after winning or losing game**
+
+![1](https://github.com/Asik-Ifthaker-Hamim/2048/assets/109816005/b553f87f-b03d-4c97-8ff6-f098d2400ff1)
+
+**If you cannot move then **GAME OVER!!****
