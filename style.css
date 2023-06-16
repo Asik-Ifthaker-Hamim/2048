@@ -39,16 +39,17 @@ body {
   }
   #gameOver {
     position: absolute;
-    background-color: #af4820;
     height: 300px;
     width: 600px;
     border-radius: 5px;
-    color: white;
+    background-color: #da2e2e;
+    color: rgb(255, 255, 255);
     margin-left: auto;
     margin-right: auto;
     left: 0;
     top: 30%;
     right: 0;
+    font-weight: bolder;
     display: none;
     animation: show 200ms ease-in-out;
     transition: 100ms ease-in-out;
@@ -59,17 +60,18 @@ body {
   }
   #gameWin {
     position: absolute;
-    background-color: #0d85d4;
-    height: 200px;
+    background-color: #554dc2;
+    height: 300px;
     width: 500px;
     border-radius: 10px;
-    color: white;
+    color: rgb(247, 247, 247);
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    top: 35%;
+    top: 30%;
     right: 0;
     display: none;
+    font-weight: bolder;
     animation: show 200ms ease-in-out;
     transition: 100ms ease-in-out;
   }
