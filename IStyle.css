@@ -2,4 +2,28 @@
     padding: 0;
     margin: 0;
   }
+ body {
+    background-color: #263332;
+  }
+  #container {
+    min-height: 70vh;
+    width: 100vw;
+    display: grid;
+  }
+  div div {
+    border-radius: 10px;
+    margin: auto;
+    padding: 0px 10px 10px 10px;
+    background-color: #22d6cd;
+  }
+  .player {
+    width: 400px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #3d4135;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    padding: 10px;
+  }
   
