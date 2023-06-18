@@ -55,13 +55,16 @@ var down=0;
 var left=0;
 var right=0;
 document.addEventListener("keydown", (e) => {
-  if ((e.code == "ArrowLeft" || e.key == "a" || e.key == "A") && (left==0)) {
+  if (e.code == "ArrowLeft" || e.key == "a" || e.key == "A") {
     slideLeft();
-    up=0;
-    down=0;
-    left=1;
-    right=0;
-    setTwo();
+    if(left==0)
+    {
+      up=0;
+      down=0;
+      left=1;
+      right=0;
+      setTwo();
+    }
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -86,13 +89,16 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if ((e.code == "ArrowRight" || e.key == "d" || e.key == "D") && (right==0)) {
+  } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
     slideRight();
-    up=0;
-    down=0;
-    left=0;
-    right=1;
-    setTwo();
+    if(right==0)
+    {
+      up=0;
+      down=0;
+      left=0;
+      right=1;
+      setTwo();
+    }
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -117,13 +123,16 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if ((e.code == "ArrowUp" || e.key == "w" || e.key == "W") && (up==0)) {
+  } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
     slideUp();
-    up=1;
-    down=0;
-    left=0;
-    right=0;
-    setTwo();
+    if(up==0)
+    {
+      up=1;
+      down=0;
+      left=0;
+      right=0;
+      setTwo();
+    }
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -148,13 +157,16 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if ((e.code == "ArrowDown" || e.key == "s" || e.key == "S") && (down==0)) {
+  } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
     slideDown();
-    up=0;
-    down=1;
-    left=0;
-    right=0;
-    setTwo();
+    if(down==0)
+    {
+      up=0;
+      down=1;
+      left=0;
+      right=0;
+      setTwo();
+    }
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
