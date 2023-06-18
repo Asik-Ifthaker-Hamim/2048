@@ -50,9 +50,17 @@ function updateTile(tile, num) {
   }
 }
 var v = 0;
+var up=0;
+var down=0;
+var left=0;
+var right=0;
 document.addEventListener("keydown", (e) => {
-  if (e.code == "ArrowLeft" || e.key == "a" || e.key == "A") {
+  if ((e.code == "ArrowLeft" || e.key == "a" || e.key == "A") && (left==0)) {
     slideLeft();
+    up=0;
+    down=0;
+    left=1;
+    right=0;
     setTwo();
     let f = 0;
     let count = 0;
@@ -78,8 +86,12 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
+  } else if ((e.code == "ArrowRight" || e.key == "d" || e.key == "D") && (right==0)) {
     slideRight();
+    up=0;
+    down=0;
+    left=0;
+    right=1;
     setTwo();
     let f = 0;
     let count = 0;
@@ -105,8 +117,12 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
+  } else if ((e.code == "ArrowUp" || e.key == "w" || e.key == "W") && (up==0)) {
     slideUp();
+    up=1;
+    down=0;
+    left=0;
+    right=0;
     setTwo();
     let f = 0;
     let count = 0;
@@ -132,8 +148,12 @@ document.addEventListener("keydown", (e) => {
         gameOver();
       }
     }
-  } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
+  } else if ((e.code == "ArrowDown" || e.key == "s" || e.key == "S") && (down==0)) {
     slideDown();
+    up=0;
+    down=1;
+    left=0;
+    right=0;
     setTwo();
     let f = 0;
     let count = 0;
