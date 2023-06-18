@@ -56,25 +56,52 @@ var left=0;
 var right=0;
 document.addEventListener("keydown", (e) => {
   if (e.code == "ArrowLeft" || e.key == "a" || e.key == "A") {
+    let f1 = 0;
+    let f2=0;
+    let count = 0;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < columns - 1; c++) {
+        if (board[r][c] == board[r][c + 1]) f1 = 1;
+      }
+    }
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < columns - 1; c++) {
+        if (board[c][r] == board[c + 1][r]) f2 = 1;
+      }
+    }
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < columns; c++) {
+        if (board[r][c] > 0) count++;
+      }
+    }
+    if (f1 == 0 && f2==0 && count == 16) {
+      if (v == 0) v = v + 1;
+      else {
+        v = 0;
+        gameOver();
+      }
+    }
     slideLeft();
-    if(left==0)
+    if(left==0 || f1==1)
     {
       up=0;
       down=0;
       left=1;
       right=0;
+      setTwo();
     }
-    setTwo();
-    let f = 0;
+  } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
+    let f1 = 0;
+    let f2=0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[r][c] == board[r][c + 1]) f = 1;
+        if (board[r][c] == board[r][c + 1]) f1 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[c][r] == board[c + 1][r]) f = 1;
+        if (board[c][r] == board[c + 1][r]) f2 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
@@ -82,33 +109,34 @@ document.addEventListener("keydown", (e) => {
         if (board[r][c] > 0) count++;
       }
     }
-    if (f == 0 && count == 16) {
+    if (f1 == 0 && f2==0 && count == 16) {
       if (v == 0) v = v + 1;
       else {
         v = 0;
         gameOver();
       }
     }
-  } else if (e.code == "ArrowRight" || e.key == "d" || e.key == "D") {
     slideRight();
-    if(right==0)
+    if(right==0 || f1==1)
     {
       up=0;
       down=0;
       left=0;
       right=1;
+      setTwo();
     }
-    setTwo();
-    let f = 0;
+  } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
+   let f1 = 0;
+    let f2=0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[r][c] == board[r][c + 1]) f = 1;
+        if (board[r][c] == board[r][c + 1]) f1 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[c][r] == board[c + 1][r]) f = 1;
+        if (board[c][r] == board[c + 1][r]) f2 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
@@ -116,33 +144,34 @@ document.addEventListener("keydown", (e) => {
         if (board[r][c] > 0) count++;
       }
     }
-    if (f == 0 && count == 16) {
+    if (f1 == 0 && f2==0 && count == 16) {
       if (v == 0) v = v + 1;
       else {
         v = 0;
         gameOver();
       }
     }
-  } else if (e.code == "ArrowUp" || e.key == "w" || e.key == "W") {
     slideUp();
-    if(up==0)
+    if(up==0 || f2==1)
     {
       up=1;
       down=0;
       left=0;
       right=0;
+      setTwo();
     }
-    setTwo();
-    let f = 0;
+  } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
+   let f1 = 0;
+    let f2=0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[r][c] == board[r][c + 1]) f = 1;
+        if (board[r][c] == board[r][c + 1]) f1 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns - 1; c++) {
-        if (board[c][r] == board[c + 1][r]) f = 1;
+        if (board[c][r] == board[c + 1][r]) f2 = 1;
       }
     }
     for (let r = 0; r < rows; r++) {
@@ -150,46 +179,21 @@ document.addEventListener("keydown", (e) => {
         if (board[r][c] > 0) count++;
       }
     }
-    if (f == 0 && count == 16) {
+    if (f1 == 0 && f2==0 && count == 16) {
       if (v == 0) v = v + 1;
       else {
         v = 0;
         gameOver();
       }
     }
-  } else if (e.code == "ArrowDown" || e.key == "s" || e.key == "S") {
     slideDown();
-    if(down==0)
+    if(down==0 || f2==1)
     {
       up=0;
       down=1;
       left=0;
       right=0;
-    }
-    setTwo();
-    let f = 0;
-    let count = 0;
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < columns - 1; c++) {
-        if (board[r][c] == board[r][c + 1]) f = 1;
-      }
-    }
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < columns - 1; c++) {
-        if (board[c][r] == board[c + 1][r]) f = 1;
-      }
-    }
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < columns; c++) {
-        if (board[r][c] > 0) count++;
-      }
-    }
-    if (f == 0 && count == 16) {
-      if (v == 0) v = v + 1;
-      else {
-        v = 0;
-        gameOver();
-      }
+      setTwo();
     }
   }
   document.getElementById("score").innerText = score;
