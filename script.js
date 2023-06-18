@@ -63,8 +63,8 @@ document.addEventListener("keydown", (e) => {
       down=0;
       left=1;
       right=0;
-      setTwo();
     }
+    setTwo();
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -97,8 +97,8 @@ document.addEventListener("keydown", (e) => {
       down=0;
       left=0;
       right=1;
-      setTwo();
     }
+    setTwo();
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -131,8 +131,8 @@ document.addEventListener("keydown", (e) => {
       down=0;
       left=0;
       right=0;
-      setTwo();
     }
+    setTwo();
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
@@ -165,8 +165,8 @@ document.addEventListener("keydown", (e) => {
       down=1;
       left=0;
       right=0;
-      setTwo();
     }
+    setTwo();
     let f = 0;
     let count = 0;
     for (let r = 0; r < rows; r++) {
